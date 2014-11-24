@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class='col-xs article-container'>
+    <article itemscope itemtype='http://schema.org/BlogPosting'>
+        <div class='row'>
+            <div class='col-xs'>
+                <header class='article-header'>
+                    <div class='row'>
+                        <div class='col-xs'>
+                            <h1 itemprop='name'><a href='#' itemprop='url'>{{ article.title }}</a></h1>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-xs article-date'>
+                            <time itemprop='datePublished' datetime='{{ article.date.isoformat() }}' content='{{ article.date.isoformat() }}'>Written on {{ article.locale_date }}</time>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-xs index-article-git'>
+                            <ul class=''>
+                                <li><a href='#'>view</a></li>
+                                <li><a href='#'>edit</a></li>
+                                <li><a href='#'>sha</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <div class='row article-container'>
+            <div class='col-xs'>
+                <section itemprop='articleBody' class='typeset'>
+                {{ article.content }}
+                </section>
+            </div>
+        </div>
+    </article>
+</div>
+{% endblock %}
