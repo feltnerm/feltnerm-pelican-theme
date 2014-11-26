@@ -10,17 +10,22 @@
     "browserify-shim": "^3.8.0",
     "cssmin": "^0.4.2",
     "exorcist": "^0.1.6",
+    "nodemon": "^1.2.1",
     "uglify-js": "^2.4.15",
     "watch": "^0.13.0",
     "watchify": "^2.1.1"
   },
   "scripts": {
-    "dev_css": "cat ./src/css/vendor/normalize.css ./src/css/vendor/typeset.css ./src/css/vendor/flexboxgrid.css > ./static/bundle.css && autoprefixer -m ./src/css/main.css -o - >> static/bundle.css" ,
+    "watch": "nodemon --exec 'npm run dev' --watch ./src/",
+    "watch_css": "nodemon --exec 'npm run dev_css' --ext css --watch ./src/css/",
+    "watch_js": "nodemon --exec 'npm run dev_js' --ext js --watch ./src/js/",
+    "dev_css": "cat ./src/css/vendor/normalize.css ./src/css/vendor/typeset.css ./src/css/vendor/flexboxgrid.css > ./static/bundle.css && autoprefixer -m ./src/css/main.css -o - >> static/bundle.css",
     "dev_js": "browserify index.js --debug --standalone feltnerm -t browserify-shim | exorcist ./static/bundle.map.js > ./static/bundle.js",
     "dev": "npm run dev_js && npm run dev_css",
     "build_css": "cat ./src/css/vendor/normalize.css ./src/css/vendor/typeset.css ./src/css/vendor/flexboxgrid.css ./src/css/main.css | autoprefixer | cssmin > static/bundle.css",
     "build_js": "browserify index.js --standalone feltnerm -t browserify-shim | uglifyjs > static/bundle.js",
-    "build": "npm run build_js && npm run build_css"
+    "build": "npm run build_js && npm run build_css",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
