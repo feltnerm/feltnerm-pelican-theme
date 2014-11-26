@@ -1,7 +1,7 @@
 {
   "name": "feltnerm-pelican-theme",
   "version": "1.0.0",
-  "description": "Mark Feltner's theme",
+  "description": "Mark Feltner's theme for his Pelican-powered blog",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
