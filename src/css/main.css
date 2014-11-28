@@ -97,6 +97,14 @@ nav.site-nav ul { list-style-type: none; padding-left: 0px; }
 /** footer **/
 footer.site-footer {}
 
+.col-xs.index-article-git {
+    opacity: 0;
+    transition: opacity .5s ease-out;
+}
+.col-xs.index-article-git:hover {
+    opacity: 1;
+}
+
 /** Page Styles
  **/
 
