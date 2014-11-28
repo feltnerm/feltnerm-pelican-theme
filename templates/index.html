@@ -30,15 +30,17 @@
                                         <time itemprop="datePublished" datetime="{{ article.date.isoformat() }}" content="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
                                     </div>
                                 </div>
+                                <!--
                                 <div class='row'>
                                     <div class='col-xs index-article-git'>
                                         <ul>
                                             <li><a href='#'>view</a></li>
                                             <li><a href='#'>edit</a></li>
-                                            <li><a href='#'>sha</a></li>
+                                            <li><a href='#'>{{ article.git_add_sha }}</a></li>
                                         </ul>
                                     </div>
                                 </div>
+                                -->
                             </div>
                         </div>
 

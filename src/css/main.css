@@ -93,6 +93,7 @@ header.site-header h1 { }
 /** nav **/
 
 nav.site-nav ul { list-style-type: none; padding-left: 0px; }
+nav.site-nav ul > li { display: inline; }
 
 /** footer **/
 footer.site-footer {}
