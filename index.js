@@ -1,1 +1,2 @@
-module.exports = {};
+/* global require */
+var css = require('./src/css');
