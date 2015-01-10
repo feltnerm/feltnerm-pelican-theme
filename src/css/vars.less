@@ -1,0 +1,35 @@
+// vars.less
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+// grid.less
+@container-width: 960px;
+@total-columns: 12;
+@column-width: 100 / @total-columns; // calculates individual column width based off of # of columns
+@column-margin: 3.666666666666%; // space between columns
+@column-padding: 4px 8px; // space inside columns
+@row-space:2rem; // Margin-bottom for .row
+
+// Breakpoints
+@larger-than-mobile: 400px;
+@larger-than-phablet: 550px;
+@larger-than-tablet: 750px;
+@larger-than-desktop: 1000px;
+@larger-than-desktophd: 1200px;
+
+// Typography
+@base-font-size: 1.5em;
+@base-font-weight: 400;
+@base-line-height: 1.6;
+@font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@header-font-family: "Lora", serif;
+@code-font-family: "Source Code Pro", monospace;
+
+// Misc
+@global-radius:4px;
+

@@ -1,0 +1,125 @@
+@import "colors";
+@import "vars";
+@import "vendor/skeleton/skeleton";
+
+/** Sitewide styles **/
+body {
+}
+
+h1,h2,h3,h4,h5,h6 {
+}
+
+time { font-style: italic; }
+
+a {}
+a:link{}
+a:visited {}
+
+//h1 * { font-family: @sansSerifFontFamily; }
+h1 a:link {  }
+h1 a:visited { }
+
+code { font-family: @code-font-family; }
+pre > code { font-family: @code-font-family; }
+
+/** header **/
+header.site-header {
+    h1 a { font-size: 80%; };
+    margin-bottom: 21px;
+}
+
+/** content **/
+
+.site-container { }
+
+/** nav **/
+
+nav.site-nav ul { list-style-type: none; padding-left: 0px; }
+nav.site-nav ul > li { display: inline; }
+
+span.center { display: block; text-align: center; }
+
+/** footer **/
+footer.site-footer {
+    text-align: center;
+    ul {
+        list-style-type: none;
+        padding-left: 0px;
+        li { display: inline; }
+    }
+    .footer-copyright {
+        font-family: @header-font-family;
+    }
+}
+
+/** Page Styles
+ **/
+
+/** Index **/
+
+/**     header **/
+.article-container {
+    .article-header {}
+    .article-meta {
+        .article-meta-date {
+            font-family: @header-font-family;
+        }
+    }
+    .article-content {}
+}
+
+ol.index-ol {
+    li { list-style-type: none; }
+}
+
+div.index-article { }
+.index-article-meta {
+    .index-article-meta-date {
+        font-family: @header-font-family;
+    }
+    .index-article-meta-git ul { list-style-type: none; }
+    .index-article-meta-git ul li { display: inline; }
+}
+.index-article-header {
+    margin-bottom: 0rem;
+}
+//div.index-article-git {
+//    opacity: 0;
+//    transition: opacity .5s ease-out;
+//}
+//div.index-article-git:hover {
+//    opacity: 1;
+//};
+
+/**     body **/
+.article-container {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+h1.index-article-title {
+}
+/**     footer **/
+
+footer.page-footer {
+    //border-top: #EDEDED;
+}
+
+/** Article **/
+
+/**     header **/
+
+header.article-header {
+
+}
+
+/**     body **/
+div.article-container {
+
+}
+
+/**     footer **/
+
+footer.article-footer {
+
+}
