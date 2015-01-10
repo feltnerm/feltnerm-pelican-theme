@@ -28,10 +28,9 @@
   "homepage": "https://github.com/feltnerm/blog",
   "browserify": {
     "transform": [
-      "browserify-shim",
       "node-lessify"
     ]
-  }
+  },
   "browserify-shim": {
     "microformats": "microformat"
   }
