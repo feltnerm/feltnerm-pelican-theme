@@ -34,7 +34,7 @@ using [flexbox](http://caniuse.com/#search=flexbox) (sorry <=IE10 users).
 
 - *Sources:* `./src/js`
 - *Bundle Destination:* `./build/bundle.js`
-- *Relevant Tasks*: `build_js`, `dev_js`, `watch_js`
+- *Relevant Tasks*: `build`
 - *Dependencies*:
 
 ## Templates
@@ -55,56 +55,14 @@ missing please submit an issue/pull-request!
 
 # Development
 
-All sources are combined into a bundle in `./static`. `dev*` tasks will create
-a sourcemap for non-third-party dependencies, and `build*` tasks will instead
-generate a minified version with no sourcemaps.
+All sources are combined into a bundle in `./static`.
 
 ## Tasks
 
 ### <a name="tasks_build">`build`</a>
 
-Runs [`build_css`](#task_build_css) and [`build_js`](#task_build_js).
-
-### <a name="tasks_build_css">`build_css`</a>
-
-Concatenates CSS sources and third-party dependencies, runs them through
-[autoprefixer](https://github.com/postcss/autoprefixer), and minifies everything with [cssmin](https://code.google.com/p/cssmin/) into
-`./static/bundle.css`.
-
-This will always be the script that generates the CSS bundle in
-`origin/master` and `npm`.
-
-### <a name="tasks_build_js">`build_js`</a>
-
-Runs [browserify]((http://browserify.org/) and [uglify-js]((https://github.com/mishoo/UglifyJS) over the sources and creates a
-standalone bundle. (Hint: try `console.log(feltnerm);`) in your browser's
-javascript console).
+Runs [browserify]((http://browserify.org/) and [minifyify]((https://npmjs.com/packages/minifyify) over the sources and creates a
+standalone bundle with sourcemap.
 
 This will always be the script that generates the JS bundle in
 `origin/master` and `npm`.
-
-### <a name="tasks_dev">`dev`</a>
-
-Runs [`dev_css`](#task_dev_css) and [`dev_js`](#task_dev_js).
-
-### <a name="tasks_dev_css">`dev_css`</a>
-
-Concatenates CSS third-party dependencies, runs CSS sources through
-[autoprefixer](https://github.com/postcss/autoprefixer), and outputs everything into `./static/bundle.css`.
-
-### <a name="tasks_dev_js">`dev_js`</a>
-
-Runs [browserify](http://browserify.org/) and [uglify-js](https://github.com/mishoo/UglifyJS) over the sources and creates a
-standalone bundle with a sourcemap included.
-
-### <a name="task_watch">`watch`</a>
-
-Runs [`watch_css`](#task_watch_css) and [`watch_js`](#task_watch_js).
-
-### <a name="task_watch_css">`watch_css`</a>
-
-Runs [`dev_css`](#task_dev_css) with [`nodemon`]().
-
-### <a name="task_watch_js">`watch_js`</a>
-
-Runs [`dev_js`](#task_dev_js) with [`nodemon`]().
