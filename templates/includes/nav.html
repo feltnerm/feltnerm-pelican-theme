@@ -1,12 +1,12 @@
 {% block nav %}
-<div class='col-xs-7 col-xs-offset-1'>
+<div class='five columns'>
     <nav class='site-nav'>
         <ul>
-            <!--
-            <li><a href="http://blog.feltnerm.com">weblog</a></li>
-            <li><a href="http://github.com/feltnerm">projects</a></li>
-            <li><a href="#">about</a></li>
-            -->
+            <li><a href="{{ SITE_URL }}/">weblog</a> · </li>
+            <li><a href="{{ SITE_URL }}/posts">archive</a> · </li>
+            <li><a href="{{ SITE_URL }}/tags">tags</a> · </li>
+            <li><a href="{{ SITE_URL }}/projects">projects</a> · </li>
+            <li><a href="{{ SITE_URL }}/about">about</a></li>
         </ul>
     </nav>
 </div>

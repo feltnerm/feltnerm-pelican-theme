@@ -1,40 +1,24 @@
 {% extends 'base.html' %}
-{% block content %}
-<div class='col-xs article-container'>
+{% block title %}{% if article and article.title %}{{ article.title | striptags }} | {{ SITENAME_SHORT }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}
+{% block description %}{% if article and article.summary %}{{ article.summary | striptags }}{% else %}{{ DESCRIPTION | striptags }}{% endif %}{% endblock %}{% block content %}
+<div class='article-container'>
     <article itemscope itemtype='http://schema.org/BlogPosting'>
         <div class='row'>
-            <div class='col-xs'>
+            <div class='row'>
                 <header class='article-header'>
-                    <div class='row'>
-                        <div class='col-xs'>
-                            <h1 itemprop='name'><a href='#' itemprop='url'>{{ article.title }}</a></h1>
-                        </div>
-                    </div>
-                    <div class='row'>
-                        <div class='col-xs article-date'>
-                            <time itemprop='datePublished' datetime='{{ article.date.isoformat() }}' content='{{ article.date.isoformat() }}'>Written on {{ article.locale_date }}</time>
-                        </div>
-                    </div>
-                    <!--
-                    <div class='row'>
-                        <div class='col-xs index-article-git'>
-                            <ul class=''>
-                                <li><a href='#'>view</a></li>
-                                <li><a href='#'>edit</a></li>
-                                <li><a href='#'>sha</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    -->
+                    <h1 itemprop='name'><a href='#' itemprop='url'>{{ article.title }}</a></h1>
                 </header>
             </div>
-        </div>
-        <div class='row article-container'>
-            <div class='col-xs'>
-                <section itemprop='articleBody' class='typeset'>
-                {{ article.content }}
-                </section>
+            <div class='row article-meta'>
+                <span class='article-meta-date'>
+                    Written on <time itemprop='datePublished' datetime='{{ article.date.isoformat() }}' content='{{ article.date.isoformat() }}'>{{ article.date | strftime('%A, %B %d, %Y') }}</time>
+                </span>
             </div>
+        </div>
+        <div class='row article-content'>
+            <section itemprop='articleBody' class='typeset'>
+                {{ article.content }}
+            </section>
         </div>
     </article>
 </div>

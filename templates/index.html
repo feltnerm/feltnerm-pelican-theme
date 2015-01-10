@@ -1,65 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
-<div class='col-xs'>
+<div class='row'>
+    <header class='index-header'>
+    </header>
+</div>
 
-    <div class='row'>
-        <div class='col-xs'>
-            <header class='index-header'>
-            </header>
-        </div>
-    </div>
-
-    <div class='row'>
-        <div class='col-xs'>
-            <section>
-                {% for article in articles_page.object_list %}
-                <div class='row article-container'>
-                    <article class='col-xs' itemscope itemtype="http://schema.org/BlogPosting">
-
-                        <div class='row reverse'>
-                            <div class='col-xs-7 col-xs-offset-1'>
-                                <header class='article-header'>
-                                    <h1 itemprop="name">
+<section>
+    <ol class='index-ol'>
+    {% for article in dates %}
+        <li class='index-article-li'>
+            <div class='row index-article'>
+                <article itemscope itemtype="http://schema.org/BlogPosting">
+                    <div class="row">
+                        <div class='three columns index-article-meta'>
+                            <span class='index-article-meta-date'>
+                                <time itemprop="datePublished" datetime="{{ article.date.isoformat() }}" content="{{ article.date.isoformat() }}">{{ article.date | strftime('%b %d, %Y') }}</time>
+                            </span>
+                        </div>
+                        <div class='nine columns'>
+                            <div class='row index-article-header'>
+                                <header>
+                                    <h4 itemprop="name">
                                         <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-                                    </h1>
+                                    </h4>
                                 </header>
                             </div>
-                            <div class='col-xs-4 index-article-meta'>
-                                <div class='row'>
-                                    <div class='col-xs index-article-date'>
-                                        <time itemprop="datePublished" datetime="{{ article.date.isoformat() }}" content="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
-                                    </div>
-                                </div>
-                                <!--
-                                <div class='row'>
-                                    <div class='col-xs index-article-git'>
-                                        <ul>
-                                            <li><a href='#'>view</a></li>
-                                            <li><a href='#'>edit</a></li>
-                                            <li><a href='#'>{{ article.git_add_sha }}</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                -->
-                            </div>
-                        </div>
-
-                        <div class='row'>
-                            <div class='col-xs-5 col-xs-offset-5'>
+                            <div class='row index-article-about'>
                                 <section itemprop="about" class="typeset">
                                     {{ article.about }}
                                 </section>
                             </div>
                         </div>
-
-                        <footer class='row'>
-                        </footer>
-
-                    </article>
-                </div>
-                {% endfor %}
-            </section>
-        </div>
-    </div>
-</div>
+                    </div>
+                        <!--
+                        <div class='row'>
+                            <div class='col-xs index-article-git'>
+                                <ul>
+                                    <li><a href='#'>view</a></li>
+                                    <li><a href='#'>edit</a></li>
+                                    <li><a href='#'>{{ article.git_add_sha }}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        -->
+                </article>
+            </div>
+        </li>
+    {% endfor %}
+</section>
 {% endblock content %}
