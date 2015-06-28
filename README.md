@@ -22,8 +22,6 @@ Iff `./node_modules` is a direct child of your Pelican working-directory, then i
 ## CSS
 
 - *Sources:* `./src/css`
-- *Bundle Destination:* `./build/bundle.css`
-- *Relevant Tasks*: `build_css`, `dev_css`, `watch_css`
 - *Dependencies*: [normalize.css](https://github.com/necolas/normalize.css), [typeset.css](https://github.com/joshuarudd/typeset.css), [flexboxgrid.css](https://github.com/kristoferjoseph/flexboxgrid)
 
 Normalize is used (as it should), Typset is used for typographic things such
@@ -34,7 +32,6 @@ using [flexbox](http://caniuse.com/#search=flexbox) (sorry <=IE10 users).
 
 - *Sources:* `./src/js`
 - *Bundle Destination:* `./build/bundle.js`
-- *Relevant Tasks*: `build`
 - *Dependencies*:
 
 ## Templates
