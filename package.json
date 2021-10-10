@@ -3,14 +3,13 @@
   "version": "2.2.0",
   "description": "Mark Feltner's theme for his Pelican-powered blog",
   "main": "index.js",
-  "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^4.0.0",
-    "browserify": "^6.3.2",
+    "autoprefixer": "^10.3.4",
+    "browserify": "^17.0.0",
     "browserify-shim": "^3.8.0",
-    "minifyify": "^5.0.0",
-    "node-lessify": "0.0.10",
-    "nodemon": "^1.2.1"
+    "minifyify": "^7.3.5",
+    "node-lessify": "^0.2.0",
+    "nodemon": "^2.0.12"
   },
   "scripts": {
     "watch": "nodemon --exec 'npm run build' --watch ./src/**/*",
