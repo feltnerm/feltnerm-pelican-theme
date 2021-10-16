@@ -19,7 +19,8 @@
     "nodemon": "^2.0.12",
     "postcss-cli": "^9.0.1",
     "postcss-preset-env": "^6.7.0",
-    "postcss-reporter": "^7.0.4"
+    "postcss-reporter": "^7.0.4",
+    "prettier-standard": "^16.4.1"
   },
   "scripts": {
     "watch": "nodemon --exec 'npm run build' --watch ./src/**/*",
@@ -40,7 +41,9 @@
   },
   "homepage": "https://github.com/feltnerm/blog",
   "browserify": {
-    "transform": ["node-lessify"]
+    "transform": [
+      "node-lessify"
+    ]
   },
   "browserify-shim": {
     "microformats": "microformat"
