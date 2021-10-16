@@ -3,17 +3,30 @@
   "version": "2.2.1",
   "description": "Mark Feltner's theme for his Pelican-powered blog",
   "main": "index.js",
+  "browserslist": [
+    "last 2 versions",
+    "not ie <= 11",
+    "not op_mini all",
+    "not dead",
+    "not < 0.5%"
+  ],
   "devDependencies": {
-    "autoprefixer": "^10.3.4",
     "browserify": "^17.0.0",
     "browserify-shim": "^3.8.0",
+    "cssnano": "^5.0.8",
     "minifyify": "^7.3.5",
     "node-lessify": "^0.2.0",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "postcss-cli": "^9.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-reporter": "^7.0.4"
   },
   "scripts": {
     "watch": "nodemon --exec 'npm run build' --watch ./src/**/*",
-    "build": "browserify index.js --debug --standalone feltnerm -p [minifyify --map ./bundle.map.json --output static/bundle.map.json] > ./static/bundle.js && cp -r ./src/fonts ./src/images ./static/",
+    "build-css": "postcss --map --dir static/css src/**/*.css",
+    "build-js": "browserify index.js --debug --standalone feltnerm -p [minifyify --map ./bundle.map.json --output static/bundle.map.json] > ./static/bundle.js",
+    "build-assets": "cp -r ./src/fonts ./src/images ./static/",
+    "build": "npm run build-css && npm run build-js && npm run build-assets",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -27,9 +40,7 @@
   },
   "homepage": "https://github.com/feltnerm/blog",
   "browserify": {
-    "transform": [
-      "node-lessify"
-    ]
+    "transform": ["node-lessify"]
   },
   "browserify-shim": {
     "microformats": "microformat"
